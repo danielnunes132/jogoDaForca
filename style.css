@@ -1,0 +1,185 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+}
+
+h1 {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* Estilo para o desenho da forca */
+.forca-desenho {
+    position: relative;
+    width: 150px;
+    height: 180px;
+    margin: 20px auto;
+    border-bottom: 4px solid #333; /* Base */
+}
+
+#poste {
+    position: absolute;
+    width: 4px;
+    height: 150px;
+    background-color: #333;
+    left: 20px;
+    bottom: 0;
+}
+
+#trave {
+    position: absolute;
+    width: 100px;
+    height: 4px;
+    background-color: #333;
+    left: 20px;
+    top: 0;
+}
+
+#corda {
+    position: absolute;
+    width: 4px;
+    height: 20px;
+    background-color: #333;
+    left: 116px; /* Ajuste para pendurar a corda */
+    top: 0;
+}
+
+/* Partes do boneco, inicialmente escondidas */
+#cabeca, #corpo, #braco-e, #braco-d, #perna-e, #perna-d {
+    background-color: #333;
+    position: absolute;
+    border-radius: 50%; /* Para cabeça */
+    display: none; /* Inicialmente escondido */
+}
+
+#cabeca {
+    width: 30px;
+    height: 30px;
+    top: 18px;
+    left: 100px;
+    border: 2px solid #333;
+    background-color: transparent;
+}
+
+#corpo {
+    width: 4px;
+    height: 50px;
+    top: 50px;
+    left: 116px;
+}
+
+#braco-e, #braco-d {
+    width: 30px;
+    height: 4px;
+    top: 60px;
+    transform-origin: 0% 50%;
+}
+#braco-e {
+    left: 90px;
+    transform: rotate(45deg);
+}
+#braco-d {
+    left: 118px;
+    transform: rotate(-45deg);
+}
+
+#perna-e, #perna-d {
+    width: 40px;
+    height: 4px;
+    top: 100px;
+    transform-origin: 0% 50%;
+}
+#perna-e {
+    left: 85px;
+    transform: rotate(45deg);
+}
+#perna-d {
+    left: 110px;
+    transform: rotate(-45deg);
+}
+
+
+.palavra-secreta {
+    font-size: 2em;
+    letter-spacing: 5px;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+.letras-erradas {
+    margin-bottom: 20px;
+}
+
+.letras-erradas span {
+    color: red;
+    font-weight: bold;
+}
+
+.teclado {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(35px, 1fr));
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.teclado button {
+    background-color: #e2e6ea;
+    border: 1px solid #ccc;
+    padding: 10px 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.teclado button:hover:not(:disabled) {
+    background-color: #d1d5da;
+}
+
+.teclado button:disabled {
+    background-color: #cccccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.mensagens {
+    margin-top: 30px;
+}
+
+#mensagem {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+#reiniciarBtn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none; /* Inicialmente escondido */
+}
+
+#reiniciarBtn:hover {
+    background-color: #218838;
+}
